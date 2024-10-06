@@ -1,0 +1,63 @@
+<div id="sticky-wrapper" class="sticky-wrapper">
+    <nav class="navbar navbar-expand-lg" (scroll)="onscroll()" [ngClass]="navbarfixed? 'fixed': 'notfixed'"
+        style="height: 60px;">
+        <div id="topnavmenu"
+            style="margin-left: 20px; margin-right: 20px; width: 100%; align-items:center">
+            <a routerLink="/" class="d-lg-block"><img style="height: 50px;"
+                    src="/assets/images/logo_new_Efraim.png" alt="Error"></a>
+            <a routerLink="/" class="btn custom-btn" style="margin-left: 50px;">
+                Efraim Live
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: auto; margin-right: 100px;">
+                <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
+                    <li class="nav-item">
+                        <a (click)="selectPage(1)" class="nav-link click-scroll" [ngClass]="{'is-active': menu == 1}"
+                            [routerLinkActive]="['is-active']" [routerLink]="['/']">Home</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a (click)="selectPage(2)" [routerLinkActive]="['is-active']" class="nav-link click-scroll" [ngClass]="{'is-active': menu == 2}">Evenimente</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a (click)="selectPage(3)" [routerLinkActive]="['is-active']" class="nav-link click-scroll"
+                            [ngClass]="{'is-active': menu == 3}">Doneaza</a>
+                    </li>
+                    <li class="nav-item">
+                        <a (click)="selectPage(4)" [routerLinkActive]="['is-active']" class="nav-link click-scroll"
+                            [ngClass]="{'is-active': menu == 4}" [routerLink]="['/contact']">Contact</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a (click)="selectPage(5)" [routerLinkActive]="['is-active']" class="nav-link" [ngClass]="{'is-active': menu == 5}">Resurse</a>
+                    </li> -->
+                </ul>
+            </div>
+            <mat-sidenav class="side-nav-top left-navbar" id="sidebar-t" [(opened)]="opened" style="color: white;">
+                <!-- <img style="height: 50px;" class="margin-bottom--20" src="/assets/images/logo_new_Efraim.png" alt="Error"> -->
+                <a (click)="selectPage(1)" class="nav-link click-scroll margin-bottom--10"
+                    [ngClass]="{'is-active': menu == 1}" style="font-size: x-large;" [routerLinkActive]="['is-active']"
+                    [routerLink]="['']" (click)="opened=!opened; addTransition()">Home</a>
+
+                <a (click)="selectPage(3)" [routerLinkActive]="['is-active']"
+                    class="nav-link click-scroll margin-bottom--10" style="font-size: x-large;"
+                    [ngClass]="{'is-active': menu == 3}" (click)="opened=!opened; addTransition()">Doneaza</a>
+
+                <a (click)="selectPage(4)" [routerLinkActive]="['is-active']"
+                    class="nav-link click-scroll margin-bottom--10" style="font-size: x-large;"
+                    [ngClass]="{'is-active': menu == 4}" [routerLink]="['/contact']"
+                    (click)="opened=!opened; addTransition()">Contact</a>
+            </mat-sidenav>
+            <div>
+                <!-- <div class="d-flex text-align--center d-block d-md-none">
+                    <a routerLink="/" class="d-lg-block d-none"><img style="height: 50px;"
+                            src="/assets/images/logo_new_Efraim.png" alt="Error"></a>
+                    <a routerLink="/" class="btn custom-btn d-lg-block d-none" style="margin-left: 50px;">
+                        Efraim Live
+                    </a>
+                </div> -->
+                <button class="d-block btn-menu top-nav-btn-menu" type="button" (click)="opened=!opened; addTransition()">
+                    <mat-icon *ngIf="opened==false">menu</mat-icon><mat-icon *ngIf="opened==true">close</mat-icon>
+                </button>
+            </div>
+        </div>
+    </nav>
+</div>

@@ -1,0 +1,49 @@
+.is-active {
+    text-decoration: none;
+    color: red;
+}
+.left-navbar{
+    left: -300px !important;
+}
+
+.btn-menu{
+    position:absolute;
+    left: 10px;
+    top: 5px;
+    z-index: 999999999;
+    background: transparent;
+    color: #fff;
+    border: 0;
+    mat-icon{
+        font-size: 38px;
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #topnavmenu{
+        display: flex;
+    }
+    .top-nav-btn-menu{
+        display: none !important;
+    }
+}
+@media screen and (max-width: 992px) {
+    #topnavmenu{
+        text-align: center;
+    }
+}
+
+.d-block{display:block}
+    @media screen and (min-width:769px){
+      .d-md-block{
+        display:block !important;
+      }
+      .d-md-flex{
+        display: flex !important;
+    }
+      .d-md-none{
+        display: none !important;
+      }
+    }

@@ -1,0 +1,162 @@
+<section style="padding-top: 100px;" class="contact-page-section">
+    <div class="container" style="padding: 20px;">
+        <h1>Conectează-te cu noi!</h1>
+        <p>Îți place să fii mereu la curent cu noutățile și să faci parte din comunitatea noastră?</p>
+        <p>Te invităm să te alături și comunității noastre online! Fii primul care află despre evenimentele organizate
+            de Biserica ,,Efraim" și care urmărește postările noastre. Abonează-te la:</p>
+        <social-media-links></social-media-links>
+        <p style="margin-top: 10px;">Alătură-te nouă și fii parte din povestea noastră digitală! Dacă dorești să ne lași
+            mai multe detalii sau motive de rugăciune, te rugăm să completezi formularul de mai jos!</p>
+        <div style="margin-top: 20px;">
+            <mat-form-field class="col-sm-6 col-xs-12 padding-left--10 padding-right--10 mat-form-contact">
+                <mat-label>Nume</mat-label>
+                <input [(ngModel)]="name" matInput placeholder="">
+            </mat-form-field>
+            <mat-form-field class="col-sm-6 col-xs-12 padding-left--10 padding-right--10 mat-form-contact">
+                <mat-label>Telefon</mat-label>
+                <input [(ngModel)]="phone" matInput placeholder="">
+            </mat-form-field>
+            <mat-form-field class="col-lg-6 col-sm-12 padding-left--10 padding-right--10 mat-form-contact">
+                <mat-label>Localitatea</mat-label>
+                <input [(ngModel)]="address" matInput placeholder="">
+            </mat-form-field>
+            <mat-form-field class="col-lg-6 col-sm-12 padding-left--10 padding-right--10 mat-form-contact">
+                <mat-label>Email</mat-label>
+                <input [(ngModel)]="email" matInput placeholder="">
+            </mat-form-field>
+            <mat-form-field class="col-lg-6 col-sm-12 padding-left--10 padding-right--10 mat-form-contact">
+                <mat-label>Data nasterii</mat-label>
+                <input id="birthDate" matInput appDateFormat [(ngModel)]="birthDate" [matDatepicker]="picker1"
+                    placeholder="DD/MM/YYYY">
+                <i matSuffix iconPositionEnd (click)="birthDate = undefined" style="color: black;"
+                    class="material-icons cursor--pointer margin-right--10">close</i>
+                <!-- <mat-datepicker-toggle  matSuffix
+                  [for]="picker1"></mat-datepicker-toggle> -->
+                <mat-datepicker #picker1 format="dd/MM/YYYY" class="width--full"></mat-datepicker>
+            </mat-form-field>
+            <div class="padding-left--20 padding-right--20">
+                <div class="row inputs-row">
+                    <h3 class="col-xs-12 padding-left--10 padding-right--10">Participare:</h3>
+                    <div class="col-xs-12">
+                        <mat-radio-group [(ngModel)]="frequency" id="frequency">
+                            <mat-radio-button [value]="1">
+                                Vizitator pentru prima dată
+                            </mat-radio-button>
+                            <mat-radio-button [value]="2">
+                                Vizitator pentru a doua oară
+                            </mat-radio-button>
+                            <mat-radio-button [value]="3">
+                                Particip ocazional
+                            </mat-radio-button>
+                            <mat-radio-button [value]="4">
+                                Particip frecvent
+                            </mat-radio-button>
+                            <mat-radio-button [value]="5">
+                                Sunt deja membru
+                            </mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+            </div>
+            <div class="padding-left--20 padding-right--20">
+                <div class="row inputs-row">
+                    <h3 class="col-xs-12 padding-left--10 padding-right--10">Doresc să primesc invitații la evenimentele
+                        organizate de Biserica Efraim:</h3>
+                    <div class="col-xs-12">
+                        <mat-radio-group [(ngModel)]="openForNotifications" id="openForNotifications">
+                            <mat-radio-button [value]="true">
+                                Da
+                            </mat-radio-button>
+                            <mat-radio-button [value]="false">
+                                Nu
+                            </mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+            </div>
+            <div class="padding-left--20 padding-right--20">
+                <div class="row inputs-row">
+                    <h3 class="col-xs-12 padding-left--10 padding-right--10">Doresc să particip la un grup mic pentru a
+                        experimenta viața creștină:</h3>
+                    <div class="col-xs-12">
+                        <mat-radio-group [(ngModel)]="forGroups" id="forGroups">
+                            <mat-radio-button [value]="true">
+                                Da
+                            </mat-radio-button>
+                            <mat-radio-button [value]="false">
+                                Nu
+                            </mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+            </div>
+
+            <div class="padding-left--20 padding-right--20">
+                <div class="row inputs-row">
+                    <h3 class="col-xs-12 padding-left--10 padding-right--10">Azi m-am decis să îl urmez pe Domnul Isus:
+                    </h3>
+                    <div class="col-xs-12">
+                        <mat-radio-group [(ngModel)]="forJesus" id="forJesus">
+                            <mat-radio-button [value]="true">
+                                Da
+                            </mat-radio-button>
+                            <mat-radio-button [value]="false">
+                                Nu
+                            </mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+            </div>
+
+            <div class="padding-left--20 padding-right--20">
+                <div class="row inputs-row">
+                    <h3 class="col-xs-12 padding-left--10 padding-right--10">Am întrebări pe care aș dori să le discut
+                        cu o
+                        persoană din echipa pastorală:</h3>
+                    <div class="col-xs-12">
+                        <mat-radio-group [(ngModel)]="questionsForLeader" id="questionsForLeader">
+                            <mat-radio-button [value]="true">
+                                Da
+                            </mat-radio-button>
+                            <mat-radio-button [value]="false">
+                                Nu
+                            </mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+            </div>
+
+            <div class="padding-left--20 padding-right--20">
+                <div class="row inputs-row">
+                    <h3 class="col-xs-12 padding-left--10 padding-right--10">Aș dori să fiu vizitat de o persoană din
+                        echipa
+                        pastorală:</h3>
+                    <div class="col-xs-12">
+                        <mat-radio-group [(ngModel)]="openForVisit" id="openForVisit">
+                            <mat-radio-button [value]="true">
+                                Da
+                            </mat-radio-button>
+                            <mat-radio-button [value]="false">
+                                Nu
+                            </mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="padding-left--20 padding-right--20">
+            <div class="row inputs-row">
+                <h3 class="col-xs-12 padding-left--10 padding-right--10">Dacă aveți motive de rugăciune, vă rugăm să le
+                    scrieți mai jos. Biserica Efraim se angajează să se roage pentru aceste cauze (joia de la ora
+                    18.30).</h3>
+                <mat-form-field class="col-sm-12 padding-left--10 padding-right--10">
+                    <textarea [(ngModel)]="email" rows="3" matInput placeholder=""></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="col-sm-12 d-flex padding-left--10 padding-right--10 margin-top--20">
+            <button mat-button mat-raised-button class="mat-primary" style="margin-left: auto;"
+                (click)="sendContactForm()">Send</button>
+        </div>
+    </div>
+</section>

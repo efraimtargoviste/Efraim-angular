@@ -1,0 +1,13 @@
+<div #map class="map width--full h--700">
+  @defer (on viewport(map)) {
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d592.3717280456393!2d25.444041947091566!3d44.9287762367838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b2f6a6649a615b%3A0x7b03065ada1561fd!2sBiserica%20EFRAIM!5e0!3m2!1sen!2sro!4v1728561874750!5m2!1sen!2sro" [width]="width" [height]="height"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  } @loading {
+    <div class="loading">
+      <p>Se incarca harta...</p>
+    </div>
+  } @error {
+    <div class="error">
+      <p>Ne pare rau, dar nu am putut incarca harta.</p>
+    </div>
+  }
+</div>

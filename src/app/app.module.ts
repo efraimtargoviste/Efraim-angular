@@ -22,6 +22,8 @@ import { HttpService } from './services/http-service';
 import { HttpClientModule } from '@angular/common/http';
 import { LoaderService } from './services/loader.service';
 import { FooterComponent } from './components/footer.component';
+import { ChurchLocation } from './components/church-location.component';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { FooterComponent } from './components/footer.component';
     HomeComponent,
     SocialMediaLinksComponent,
     ContactComponent,
-    DateFormatDirective
+    DateFormatDirective,
+    ChurchLocation
   ],
   imports: [
     BrowserModule,
@@ -47,6 +50,7 @@ import { FooterComponent } from './components/footer.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatRadioModule,
+    AngularSvgIconModule.forRoot(),
   ],
   exports: [
     MatButtonModule,

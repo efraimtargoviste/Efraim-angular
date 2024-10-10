@@ -46,6 +46,8 @@ https://templatemo.com/tm-583-festava-live
   --font-weight-light:            300;
   --font-weight-normal:           400;
   --font-weight-bold:             700;
+
+  --header-height: 60px;
 }
 @font-face {
   font-family: 'spartan';
@@ -53,9 +55,9 @@ https://templatemo.com/tm-583-festava-live
 }
 
 body {
-  background-color: var(--white-color);
+  background: linear-gradient(200.6deg, rgba(0, 0, 0, 0.93) 11.2%, rgb(63, 61, 61) 78.9%);
   /* font-family: var(--body-font-family);  */
-  font-family: 'spartan';
+  font-family: 'spartan', serif;
 }
 
 
@@ -343,8 +345,10 @@ strong {
   VIDEO              
 -----------------------------------------*/
 .video-wrap {
+  position: relative;
   z-index: -100;
-  height: 950px;
+  height: 100vh;
+  top: calc(var(--header-height) * -1);
 }
 
 .text-on-the-video{
@@ -376,17 +380,6 @@ strong {
 /*---------------------------------------
   NAVIGATION              
 -----------------------------------------*/
-.sticky-wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  font-family: 'spartan';
-}
-
-.sticky-wrapper.is-sticky .navbar {
-  background-color: var(--dark-color);
-}
 
 .navbar {
   background: transparent;
@@ -493,9 +486,7 @@ strong {
 -----------------------------------------*/
 .video-section {
   position: relative;
-  overflow: hidden;
-  padding-top: 100px;
-  height: calc(100vh - 51px);
+  height: calc(100vh - var(--header-height));
 }
 
 .video-section small {
@@ -508,15 +499,17 @@ strong {
   opacity: 0.45;
 }
 
-.video-section .container {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  /* padding-bottom: 50px; */
-}
-
 .video-section .container .row {
   height: 100%;
+}
+
+.video-interface {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 
@@ -797,11 +790,11 @@ strong {
 }
 
 .side-nav-top{
-  position: absolute;
-  left: 0;
+  position: fixed;
   top: 0;
+  right: 0;
   background: #032633;
-  padding: 60px 40px 20px 40px;
+  padding: 60px 26px;
   height: 100vh;
   width: 230px;
   z-index: 99999999;
@@ -867,16 +860,8 @@ strong {
     background-color: var(--dark-color);
   }
 
-  .navbar-expand-lg .navbar-nav {
-    padding-bottom: 30px;
-  }
-
   .navbar-expand-lg .navbar-nav .nav-link {
     padding: 0;
-  }
-
-  .video-section {
-    padding-top: 150px;
   }
 
   .pricing-thumb {

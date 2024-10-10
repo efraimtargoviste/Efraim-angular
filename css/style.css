@@ -376,17 +376,6 @@ strong {
 /*---------------------------------------
   NAVIGATION              
 -----------------------------------------*/
-.sticky-wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  font-family: 'spartan';
-}
-
-.sticky-wrapper.is-sticky .navbar {
-  background-color: var(--dark-color);
-}
 
 .navbar {
   background: transparent;

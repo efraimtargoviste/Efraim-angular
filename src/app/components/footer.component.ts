@@ -12,7 +12,6 @@ import { Router } from "@angular/router";
       public router: Router){
 
     }
-
     ngOnInit(){
       
     }

@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from "@angular/core";
+import {Component, ElementRef, HostListener, OnInit, ViewChild} from "@angular/core";
 import { Router } from "@angular/router";
 
 @Component({
@@ -6,19 +6,11 @@ import { Router } from "@angular/router";
     templateUrl: 'top-nav.component.html',
     styleUrls: ['./top-nav.component.scss']
   })
-  
+
   export class TopNavComponent implements OnInit {
-  navbarfixed: boolean = false;
+  @ViewChild('navbar') navbar: ElementRef | undefined;
   public opened: boolean = false;
   menu: number = 1;
-    @HostListener('window:scroll', ['$event']) onscroll(){
-      if(window.scrollY > 50){
-        this.navbarfixed = true;
-      }
-      else{
-        this.navbarfixed = false;
-      }
-    }
     constructor(
       public router: Router){
 
@@ -36,6 +28,20 @@ import { Router } from "@angular/router";
             break;
         }
       }, 200);
+    }
+
+    ngAfterViewInit(){
+      console.log(this.navbar?.nativeElement);
+      if(!this.navbar) return;
+      const observer = new IntersectionObserver(
+        ([e]) => {
+          console.log(e.intersectionRatio);
+          return e.target.classList.toggle("is-pinned", e.intersectionRatio < 1);
+        },
+        { threshold: [1] }
+      );
+
+      observer.observe(this.navbar?.nativeElement);
     }
 
     selectPage(index: number){
